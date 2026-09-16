@@ -5,7 +5,9 @@ behavior in a small open-weights language model running autonomously on consumer
 hardware**, under strict no-intervention observation.
 
 - **S1** — the supervisor harness (episode driver, durable state, gate, evaluator loop)
-- **M0** — the current champion model generation (fine-tuned descendant of a 4B base model)
+- **M0** — the current model generation: the ancestral Qwen3.5-4B seed. Fine-tuned
+  challengers are derived from it and evaluated against it; only a verified
+  promotion would begin generation M1.
 - **The lineage** — every challenger adapter M0 produces, every evaluator verdict, every
   promotion decision, preserved immutably, including failures.
 
