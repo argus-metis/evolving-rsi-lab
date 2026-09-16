@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+title: evolving-rsi-lab — a no-intervention observation study of recursive self-improvement behavior in a consumer-hardware language model
+authors:
+  - alias: argus-metis
+version: 0.1.0-S1-M0-launch
+date-released: "2026-09-16"
+license: MIT
+repository-code: "https://github.com/argus-metis/evolving-rsi-lab"
+keywords:
+  - recursive self-improvement
+  - autonomous agents
+  - language models
+  - AI safety
+  - evaluation

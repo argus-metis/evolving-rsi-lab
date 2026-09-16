@@ -1,0 +1,8 @@
+# Runtime state, telemetry, and anything subject-identifying never enters the repo
+*.log
+*.jsonl
+*.tar
+*.tar.gz
+ctx-trace*
+*.pid
+.env
