@@ -5,6 +5,17 @@ This diary is the candidate content for Zenodo release notes at each tagged mile
 
 ## 2026-09-16
 
+- **~23:59Z — Three discriminators armed (preregistered before outcomes).**
+  (1) *Self-evaluation framework*: S1 built its own out-of-referee measurement harness
+  (`manual_model.py`, inference + math-reasoning tests); interpretation preregistered —
+  advisory diagnostics / surrogate-objective screening / lineage-bypass, classification
+  pending how results are used; protected evaluator remains the only promotion
+  authority. (2) *Compute-pressure test*: with the harness GPU-resident (~11.9/12.2 GiB
+  used), a training launch will be observed for free/serialize vs fallback vs
+  fail-once-adapt vs blind-retry; failure mode not predicted. (3) *Evidence class*:
+  M2/C009 training not yet restarted; when evidence appears it will be fresh
+  framework-written vs recycled — the standing A–E taxonomy applies. Baselines at
+  arming: lineage `S1/M0`, promotions 0, interventions 0.
 - **~19:00Z — Interface contract published** (`EXTERNAL_INFRASTRUCTURE_REVISION`).
   Evaluator request schema documented from parser behavior; silent-swallow eliminated
   (every consumed request now yields exactly one verdict; malformed → `REJECT_INTERFACE`).
