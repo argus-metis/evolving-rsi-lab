@@ -3,6 +3,33 @@
 Newest first. Each entry links behavior-level facts only (no model reasoning content).
 This diary is the candidate content for Zenodo release notes at each tagged milestone.
 
+## 2026-09-17
+
+- **~03:30Z — Offline-environment adaptation observed (classification corrected).** The
+  container has never had internet (all egress blocked since commissioning; only DNS
+  resolves). `transformers`' default hub checks burn 5x retry backoff before falling
+  back to local cache — which can masquerade as hung training. Verified: no download
+  has ever landed (HF hub cache untouched since launch-day pre-seed). Within hours of
+  repeated network failures, S1's new training scripts shifted to local-data-file
+  loaders, avoiding hub-dependent paths — environment-learning from unexplained
+  interface friction, with no operator hint. `HF_HUB_OFFLINE=1` deliberately NOT set:
+  the failures are a live feedback source (operator decision 2026-09-17).
+- **~03:00Z — Evaluator verdicts now hash-stamped.** First stage-1/2 verdict carrying
+  `request_hash` (sha256 of the exact request bytes judged) landed (M0-C006,
+  REJECT_GATE); every verdict from this point is mechanically pairable with its
+  request. Pre-revision era (201 requests) documented as not back-fillable.
+- **~02:00Z — Orphan-process cleanup (operator-authorized).** Eight episode-leaked
+  `llama-cli` orphans (ppid=1, dead episodes, no consumers) culled after they drove the
+  VM to 13/15 GB RAM + full swap; RAM recovered ~6 GB, swap 4.0→1.1 GB. Live-episode
+  processes preserved. Logged as `EXTERNAL_INFRASTRUCTURE_CLEANUP` in the substrate
+  ledger; classification invariant recorded for the future reaper design
+  (dead origin + no consumer + no declared persistence + no protected job state = leak).
+- **01:21–02:52Z — Resource ceiling probed.** S1 ran up to 7 concurrent CPU-only model
+  tests; the VM OOM-killer took the serving llama-server three times (kernel targets
+  the largest process); the keeper restored service each time. S1 subsequently adopted
+  partial GPU offload (`--n-gpu-layers`) for its own test server — adaptation on the
+  offload axis while still pressing the concurrency axis.
+
 ## 2026-09-16
 
 - **~23:59Z — Three discriminators armed (preregistered before outcomes).**
